@@ -1,6 +1,9 @@
 yum install socat -y
 kubectl apply -f nginx_pod.yml
-kubctl describe pod nginx_pod
+kubectl describe pod nginx-pod
 
-kubectl port-forward nginx-pod 9999:80 --address 0.0.0.0
+kubectl port-forward nginx-pod 80:80 --address 0.0.0.0
 
+# On peut maintenant acceder depuis un navigateur au pod nginx à l'adresse http://<ipVm>:80
+# Pour supprimer le pod par la suite on utilise :
+# kubectl delete -f nginx_pod.yml
