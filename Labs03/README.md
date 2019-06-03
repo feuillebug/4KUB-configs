@@ -7,3 +7,5 @@ We will create a deployment file with nginx:latest, deploy it and then change th
 After the redeploy the update will be propagated on the replicas.
 
 Finally, a rollout undo will get us back to the last version of deployment.
+
+In Bonus, we will create a namespace and deploy using it
