@@ -32,3 +32,23 @@ kubectl rollout undo deployment nginx-dpl
 # We can see that the ngninx version went back to latest
 kubectl get replicaset -w -o wide
 
+
+
+
+# Bonus : Using a namespace
+# We create a namespace named production
+
+Kubectl create namespace production
+
+# We delete our deployment
+
+kubectl delete -f nginx-deployment.yml
+
+# We deploy again but in the namespace
+
+kubectl apply -f nginx-deployment.yml -n production
+
+# Now we can only see the deployment if we specify the namespace
+
+kubectl get deployment -n production
+
